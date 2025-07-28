@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QR Code Generator</title>
+
+    <script src="/static/qr_app.js"></script>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <header>
+        {% if qr_in_navbar %}
+            <a href="/">
+                <img alt="QR code for turnerforever.com" height="80" id="navbar-img" src="/static/turnerforever.com.png" title="turnerforever.com" width="80">
+            </a>
+        {% endif %}
+        <span><a href="/">QR Code Generator</a></span>
+    </header>
+
+    <main>
+        <p>Congratulations! You have found what is undoubtedly your easiest and most straightforward way to generate good, professional-looking QR codes. Just enter a URL below, and await the result!</p>
+
+        <p><span class="button" id="error"></span></p>
+        <input class="url" id="url-input" maxlength="2048" placeholder="Starts with http:// or https://" type="text" value="{{ url }}" size="31"><button class="button" id="input-clear">Clear URL</button>
+
+        <div id="result">
+            <h3>Result <br class="spacer"><a class="button" href="img.png" id="download-link" download>Download as PNG</a></h3>
+
+            <p class="url"><a href="{{ url }}" id="link-to-url" target="_blank">{{ url }}</a></p>
+
+            <div>
+                <img alt="Requested QR code" height="250" id="demo-img" src="img.png" width="250">
+            </div>
+        </div>
+    </main>
+
+    <div id="cookie-warning">
+    <p>This site uses several essential cookies to help ensure your safe, smooth experience.</p>
+
+    <div class="accordion-container">
+      <button class="accordion">
+        <span class="accordion-before">
+          &gt;
+        </span>
+        Learn More
+      </button>
+
+      <div class="panel">
+        <p>We use some or all of the following cookies for security and a smooth experience, and they are <strong>essential</strong>: you cannot disable, or customize them.</p>
+        <ul>
+          <li><code>session</code></li>
+          <li><code>cws</code></li>
+        </ul>
+        <p>To learn more about cookies, please visit <a href="https://allaboutcookies.org" target="_blank">https://allaboutcookies.org</a>.</p>
+      </div>
+    </div>
+
+    <p id="accept-container"><button id="accept-cookies">Accept</button></p>
+  </div>
+</body>
+
+</html>
