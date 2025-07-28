@@ -1,3 +1,4 @@
+"""Implements a simple Flask app for generating QR codes."""
 from django.core.validators import URLValidator, ValidationError
 from flask import Flask, Response, render_template, request, session
 from flask_session import Session
