@@ -1,7 +1,7 @@
 # QRMaker
 Simple Flask app for generating QR codes.
 
-This app is very simple to use: to generate a QR code for any URL, once you have gone to wherever it is hosted (maybe [turnerforever.com](http://turnerforever.com)?), all you have to do is clear the text input area of the URL it already contains (`https://example.com`) and enter your own URL in. The QR code will automatically be generated and displayed below with an option to download it as a PNG image.
+This app is very easy to use: to generate a QR code for any URL, once you have gone to wherever it is hosted (currently [turnerforever.com](http://turnerforever.com)), all you have to do is clear the text input area of the URL it already contains (`https://example.com`) and enter your own URL in. The QR code will automatically be generated and displayed below with an option to download it as a PNG image.
 
 ### How It Works
 In this app, there is only one page actually meant for the user to view: the file [index.html](templates/index.html), which is rendered for the path `/`. Its focus point is an HTML `<input>` element for a URL which contains `https://example.com` by default, and is monitored by JavaScript. The file [qr_app.js](static/qr_app.js) adds an `input` event listener to it so that upon input, it does the following:
